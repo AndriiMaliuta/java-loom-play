@@ -15,9 +15,10 @@ public class VirtualThreadServer implements Server {
     }
 
     public void listen() {
-        ServerSocket server = null;
-        try (var executor = Executors.newVirtualThreadPerTaskExecutor()) {
-            server = new ServerSocket(8088);
+//        ServerSocket server = null;
+        try (var executor = Executors.newVirtualThreadPerTaskExecutor();
+             var server = new ServerSocket(8088)) {
+
             while (true) {
                 Socket socket = server.accept();
                 executor.execute(() -> echo.accept(socket));
