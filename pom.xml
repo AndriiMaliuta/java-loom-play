@@ -32,10 +32,10 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>dev.nipafx.lab.loom.Experiments</mainClass>
+                            <mainClass>com.andmal.Exp</mainClass>
                         </manifest>
                     </archive>
-                    <finalName>loom-lab</finalName>
+                    <finalName>loom-play</finalName>
                 </configuration>
             </plugin>
         </plugins>

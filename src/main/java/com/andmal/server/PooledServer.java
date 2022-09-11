@@ -9,7 +9,7 @@ import java.util.function.Consumer;
 
 import static java.util.Objects.requireNonNull;
 
-public class PooledServer {
+public class PooledServer implements Server {
     private final Consumer<Socket> echo;
     private final ExecutorService pool;
 
@@ -18,6 +18,7 @@ public class PooledServer {
         this.pool = Executors.newFixedThreadPool(threadsCount);
     }
 
+    @Override
     public void listen() throws IOException {
         ServerSocket server = new ServerSocket(8088);
         try (pool) {
